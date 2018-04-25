@@ -3,10 +3,7 @@
 <hibernate-mapping>
 	<class name="org.archive.accesscontrol.model.Rule" table="rules" polymorphism="explicit">
 		<id name="id" column="id" type="java.lang.Long">
-			<generator class="sequence">
-				<param name="sequence">rule_id_seq</param>
-			</generator>
-
+                    <generator class="identity" />
 		</id>
 
 		<property name="policy" column="policy" type="java.lang.String" />
