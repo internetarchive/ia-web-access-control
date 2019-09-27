@@ -36,6 +36,9 @@ public class HttpRuleDao implements RuleDao {
         this.oracleUrl = oracleUrl;
         xstream.alias("rule", Rule.class);
         xstream.alias("ruleSet", RuleSet.class);
+
+        // let's not wait forever.
+        http.getParams().setParameter("http.connection-manager.timeout", new Long(10000));
     }
 
     /**
